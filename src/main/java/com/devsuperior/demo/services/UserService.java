@@ -30,6 +30,7 @@ public class UserService implements UserDetailsService {
     }
 
     private void userLoad(User user, String username, List<UserDetailsProjection> projection) {
+        user.setName(username);
         user.setEmail(username);
         user.setPassword(projection.get(0).getPassword());
         for (UserDetailsProjection u : projection) {
